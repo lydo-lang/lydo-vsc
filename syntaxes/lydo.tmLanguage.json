@@ -34,7 +34,7 @@
 		"operators": {
 			"patterns": [{
 				"name": "keyword.operator.arithmetic.lydo",
-				"match": "(\\+|-|\\*|\\*\\*|\\\/|%|>=|>=|>|<|==|!=|&&|\\|\\|)"
+				"match": "(\\+|-|\\*|\\*\\*|\\\/|%|>=|>=|>|<|==|=|!=|&&|\\|\\|)"
 			}]
 		},
 		"types": {
@@ -70,12 +70,12 @@
 		"local_calls": {
 			"name": "variable.name.lydo",
 			"begin": "(\\@)",
-			"end": "($| |}|,|\\.)"
+			"end": "($| |}|,|\\.|{|\\)|\\()"
 		},
 		"comp_calls": {
 			"name": "entity.name.section.lydo",
 			"begin": "(\\&)",
-			"end": "($| |}|,|\\.)"
+			"end": "($| |}|,|\\.|{|\\)|\\()"
 		},
 		"codetags": {
 			"match": "(?:\\b(NOTE|BUG|TODO)\\b)",
