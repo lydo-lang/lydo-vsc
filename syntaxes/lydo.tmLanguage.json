@@ -1,0 +1,91 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Lydo",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#types"
+		},
+		{
+			"include": "#local_calls"
+		},
+		{
+			"include": "#comp_calls"
+		},
+		{
+			"include": "#strings"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.lydo",
+				"match": "\\b(const|mut|if|else|loop|exit)\\b"
+			}]
+		},
+		"operators": {
+			"patterns": [{
+				"name": "keyword.operator.arithmetic.lydo",
+				"match": "(\\+|-|\\*|\\*\\*|\\\/|%|>=|>=|>|<|==|!=|&&|\\|\\|)"
+			}]
+		},
+		"types": {
+			"name": "support.type.primitive.lydo",
+			"match": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))(string|undetermined|collection|none|number)(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))"
+		},
+		"strings": {
+			"name": "string.quoted.double.lydo",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.lydo",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comments": {
+			"name": "comment.line.number-sign.lydo",
+			"begin": "(\\#)",
+			"beginCaptures": {
+				"1": {
+					"name": "punctuation.definition.comment.lydo"
+				}
+			},
+			"end": "($)",
+			"patterns": [
+				{
+					"include": "#codetags"
+				}
+			]
+		},
+		"local_calls": {
+			"name": "variable.name.lydo",
+			"begin": "(\\@)",
+			"end": "($| |}|,|\\.)"
+		},
+		"comp_calls": {
+			"name": "entity.name.section.lydo",
+			"begin": "(\\&)",
+			"end": "($| |}|,|\\.)"
+		},
+		"codetags": {
+			"match": "(?:\\b(NOTE|BUG|TODO)\\b)",
+			"captures": {
+				"1": {
+					"name": "keyword.codetag.notation.lydo"
+				}
+			}
+		}
+		
+	},
+	"scopeName": "source.lydo"
+}

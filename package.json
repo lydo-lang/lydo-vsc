@@ -1,0 +1,25 @@
+{
+    "name": "lydo",
+    "displayName": "Lydo",
+    "description": "Lydo programming language",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.69.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "lydo",
+            "aliases": ["Lydo", "lydo"],
+            "extensions": [".lydo"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "lydo",
+            "scopeName": "source.lydo",
+            "path": "./syntaxes/lydo.tmLanguage.json"
+        }]
+    }
+}
