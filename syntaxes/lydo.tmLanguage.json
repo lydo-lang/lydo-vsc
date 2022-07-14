@@ -18,6 +18,9 @@
 			"include": "#local_calls"
 		},
 		{
+			"include": "#pipe"
+		},
+		{
 			"include": "#comp_calls"
 		},
 		{
@@ -76,6 +79,12 @@
 			"name": "entity.name.section.lydo",
 			"begin": "(\\&)",
 			"end": "($| |}|,|\\.|{|\\)|\\()"
+		},
+		"pipe": {
+			"patterns": [{
+				"name": "keyword.operator.other.lydo",
+				"match": "\\|>"
+			}]
 		},
 		"codetags": {
 			"match": "(?:\\b(NOTE|BUG|TODO)\\b)",
